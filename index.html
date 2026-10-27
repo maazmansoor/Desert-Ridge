@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Desert Ridge Kingman</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Desert Ridge Stepping Stones Daycare & Preschool (ages 2–5) and Desert Ridge Preparatory (K–8) in Kingman, Arizona. Small classes, project-based learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:wght@400;500;700&display=swap">
+<style>
+/* Layout: photo hero with both seals → two-campus split → philosophy w/ Max → contact + tour form. Sandstone ground, adobe ink, turquoise (local stone) as the action color, copper as the trim. */
+:root{
+  --sand:#f7efe3; --sand-2:#efe2cf; --card:#fffaf2;
+  --ink:#3a2418; --ink-soft:#6b4f3d; --line:#dcc7ab;
+  --copper:#b8602a; --turq:#1f7a74; --turq-ink:#ffffff;
+  --hero-ink:#fff8ee;
+  --display:"Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --body:"Karla", "Segoe UI", system-ui, sans-serif;
+  --gut-l:max(16px, env(safe-area-inset-left,0px)); --gut-r:max(16px, env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sand:#1d1612; --sand-2:#261d17; --card:#2c221b; --ink:#f3e6d4; --ink-soft:#c9b39b; --line:#4a3a2e;
+  --copper:#e08a52; --turq:#4fb8ae; --turq-ink:#0f1f1d; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --sand:#1d1612; --sand-2:#261d17; --card:#2c221b; --ink:#f3e6d4; --ink-soft:#c9b39b; --line:#4a3a2e;
+  --copper:#e08a52; --turq:#4fb8ae; --turq-ink:#0f1f1d; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--sand); color:var(--ink); font:400 17px/1.6 var(--body); margin:0}
+h1,h2,h3{font-family:var(--display); line-height:1.1; text-wrap:balance; margin:0}
+a{color:inherit}
+.wrap{max-width:1120px; margin:0 auto; padding-left:var(--gut-l); padding-right:var(--gut-r)}
+.eyebrow{font:700 .78rem/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--copper)}
+:focus-visible{outline:3px solid var(--turq); outline-offset:3px; border-radius:4px}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; gap:.5em; padding:.85em 1.4em; border-radius:999px; font:700 1rem/1 var(--body); text-decoration:none; border:2px solid transparent; cursor:pointer; transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--turq); color:var(--turq-ink)}
+.btn-ghost{border-color:currentColor; color:inherit; background:transparent}
+
+/* header */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--sand)}
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:9; background:color-mix(in srgb, var(--sand) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:10px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font:700 1.15rem/1 var(--display)}
+.brand img{width:40px; height:40px}
+.nav{display:flex; gap:22px; align-items:center; font-weight:500}
+.nav a{text-decoration:none; color:var(--ink-soft)} .nav a:hover{color:var(--ink)}
+.nav .btn{padding:.6em 1.1em; font-size:.92rem; color:var(--turq-ink)}
+@media (max-width:820px){.nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative; color:var(--hero-ink); overflow:hidden; isolation:isolate}
+.hero::before{content:""; position:absolute; inset:0; z-index:-2; background:url("images/prep-building.jpg") center 35%/cover no-repeat}
+.hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(36,20,12,.55) 0%, rgba(36,20,12,.78) 60%, rgba(36,20,12,.92) 100%)}
+.hero .wrap{padding-block:clamp(48px,8vw,96px); display:grid; gap:28px; justify-items:center; text-align:center}
+.seals{display:flex; gap:clamp(14px,3vw,28px); align-items:center}
+.seals img{width:clamp(120px,18vw,180px); height:auto; filter:drop-shadow(0 8px 20px rgba(0,0,0,.45))}
+.seals .amp{font:600 1.6rem var(--display); opacity:.8}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4.2rem); font-weight:700; max-width:18ch}
+.hero h1 span{color:#f3b27a; display:block; font-weight:600}
+.hero p.lede{font-size:clamp(1.05rem,2vw,1.3rem); max-width:44ch; margin:0; opacity:.95}
+.hero .ctas{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+.hero .btn-primary{background:#2a9d94; color:#fff}
+.hero .btn-ghost{color:var(--hero-ink)}
+.strip{display:flex; flex-wrap:wrap; gap:8px 26px; justify-content:center; font-size:.92rem; opacity:.9; margin-top:6px}
+.strip b{color:#f3b27a; font-weight:700}
+
+/* section shell */
+section{padding-block:clamp(56px,8vw,96px)}
+.head{display:grid; gap:10px; margin-bottom:36px; max-width:640px}
+.head h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.head p{margin:0; color:var(--ink-soft)}
+
+/* programs */
+.programs{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:28px}
+.prog{background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column}
+.prog .photo{position:relative; aspect-ratio:16/8; max-width:100%; background:var(--sand-2) center/cover no-repeat}
+.prog .photo img{position:absolute; right:16px; bottom:-34px; width:88px; height:88px; filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+.prog .body{padding:26px 26px 28px; display:grid; gap:14px; min-width:0}
+.prog h3{font-size:1.65rem; padding-right:84px}
+.facts{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; margin:0; font-size:.98rem}
+.facts dt{font:700 .74rem/1.9 var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--copper)}
+.facts dd{margin:0}
+.prog p{margin:0; color:var(--ink-soft)}
+.prog ul{margin:0; padding:0; list-style:none; display:grid; gap:8px}
+.prog li{padding-left:22px; position:relative}
+.prog li::before{content:""; position:absolute; left:2px; top:.62em; width:9px; height:9px; border-radius:2px; background:var(--turq); transform:rotate(45deg)}
+.prog .tag{align-self:start; justify-self:start; font:700 .8rem var(--body); letter-spacing:.06em; padding:.4em .8em; border-radius:999px; background:var(--sand-2); color:var(--ink)}
+
+/* philosophy */
+.philo{background:var(--sand-2)}
+.philo-grid{display:grid; grid-template-columns:1.35fr 1fr; gap:40px; align-items:start}
+@media (max-width:860px){.philo-grid{grid-template-columns:1fr}}
+.mvv{display:grid; gap:26px}
+.mvv article{display:grid; gap:6px; border-left:3px solid var(--copper); padding-left:18px}
+.mvv h3{font-size:1.3rem}
+.mvv p{margin:0; max-width:62ch}
+.values{display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 0; padding:0; list-style:none}
+.values li{background:var(--card); border:1px solid var(--line); padding:.35em .85em; border-radius:999px; font-weight:500; font-size:.95rem}
+.keywords{font-family:var(--display); font-size:1.15rem; color:var(--turq); margin:0}
+.max{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; display:grid; gap:16px; justify-items:center; text-align:center}
+.max img{width:min(240px,70%); border-radius:50%; aspect-ratio:1; object-fit:cover}
+.max h3{font-size:1.6rem}
+.max .motto{font:700 1.05rem var(--display); color:var(--copper); margin:0}
+.max p{margin:0; color:var(--ink-soft); max-width:40ch}
+.ore{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+.ore span{font:700 .74rem var(--body); letter-spacing:.12em; text-transform:uppercase; padding:.45em .8em; border-radius:6px}
+.ore .gold{background:#e9c46a; color:#3a2a05}
+.ore .turquoise{background:#40b3a8; color:#06211f}
+.ore .lime{background:#e6e1d4; color:#3d382d}
+
+/* contact */
+.contact-grid{display:grid; grid-template-columns:1fr 1.1fr; gap:36px; align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.campuses{display:grid; gap:18px}
+.campus{border:1px solid var(--line); border-radius:14px; padding:20px 22px; background:var(--card); display:grid; gap:6px}
+.campus h3{font-size:1.3rem}
+.campus .row{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.campus .k{font:700 .72rem var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--copper); min-width:62px}
+.campus a{text-decoration-color:var(--line)}
+.phone-big{display:grid; gap:4px; padding:20px 22px; border-radius:14px; background:var(--ink); color:var(--sand)}
+.phone-big .num{font:700 clamp(1.7rem,4vw,2.2rem)/1.1 var(--display); text-decoration:none; color:inherit; font-variant-numeric:tabular-nums}
+.phone-big small{opacity:.8}
+
+form.tour{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:clamp(20px,3vw,32px); display:grid; gap:16px}
+form.tour h3{font-size:1.6rem}
+form.tour > p{margin:-6px 0 0; color:var(--ink-soft)}
+.field{display:grid; gap:6px}
+.field label, fieldset legend{font-weight:700; font-size:.92rem}
+.field input, .field select{font:inherit; padding:.75em .9em; border-radius:10px; border:1.5px solid var(--line); background:var(--sand); color:var(--ink); width:100%}
+.field input:focus, .field select:focus{outline:none; border-color:var(--turq); box-shadow:0 0 0 3px color-mix(in srgb, var(--turq) 25%, transparent)}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+fieldset{border:0; padding:0; margin:0; display:grid; gap:8px}
+.choices{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+@media (max-width:520px){.choices{grid-template-columns:1fr}}
+.choice{position:relative}
+.choice input{position:absolute; opacity:0}
+.choice label{display:grid; gap:2px; padding:12px 14px; border:1.5px solid var(--line); border-radius:12px; cursor:pointer; background:var(--sand)}
+.choice label small{color:var(--ink-soft)}
+.choice input:checked + label{border-color:var(--turq); box-shadow:inset 0 0 0 1px var(--turq)}
+.choice input:focus-visible + label{outline:3px solid var(--turq); outline-offset:2px}
+.form-note{margin:0; padding:12px 14px; border-radius:10px; background:var(--sand-2); font-weight:500}
+.form-note.err{background:color-mix(in srgb, #c0392b 15%, var(--card))}
+
+footer{background:var(--ink); color:var(--sand)}
+footer .wrap{padding-block:36px; display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center}
+footer .seals img{width:56px; filter:none}
+footer p{margin:0} footer .tagline{opacity:.75}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/prep-logo.png" alt="">Desert Ridge</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#programs">Programs</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Hours &amp; Contact</a>
+      <a class="btn btn-primary" href="#tour">Schedule a Tour</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title" style="padding-block:0">
+    <div class="wrap">
+      <div class="seals">
+        <img src="images/stepping-stones-logo.png" alt="Desert Ridge Stepping Stones Daycare & Preschool seal">
+        <img src="images/prep-logo.png" alt="Desert Ridge Preparatory, Home of the Miners seal">
+      </div>
+      <h1 id="hero-title">Desert Ridge <span>From Stepping Stones to 8th Grade</span></h1>
+      <p class="lede">Authentic, project-based learning in Kingman. Small classes. Real skills.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#tour">Schedule a Tour</a>
+        <a class="btn btn-ghost" href="tel:+19282797181">Call 928-279-7181</a>
+      </div>
+      <div class="strip"><span><b>Ages 2–5</b> Stepping Stones</span><span><b>Grades K–8</b> Preparatory</span><span><b>Kingman</b> Arizona</span></div>
+    </div>
+  </section>
+
+  <section id="programs" aria-labelledby="programs-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Two programs, one path</span>
+        <h2 id="programs-title">Two Programs</h2>
+        <p>Start with us at age two and stay through eighth grade. Same values, same families, two campuses a few blocks apart in downtown Kingman.</p>
+      </div>
+      <div class="programs">
+        <article class="prog">
+          <div class="photo" style="background-image:url('images/stepping-stones-building.jpg')"><img src="images/stepping-stones-logo.png" alt=""></div>
+          <div class="body">
+            <h3>Stepping Stones Daycare &amp; Preschool</h3>
+            <dl class="facts">
+              <dt>Ages</dt><dd>2–5</dd>
+              <dt>Where</dt><dd>127 E Beale Street</dd>
+              <dt>Hours</dt><dd>6:30 am – 6:00 pm, every day</dd>
+            </dl>
+            <ul>
+              <li>Small rooms of 8–13 kids</li>
+              <li>Project-based play that follows state standards</li>
+              <li>Indoor and outdoor space</li>
+              <li>One flat fee for all-day preschool</li>
+            </ul>
+          </div>
+        </article>
+        <article class="prog">
+          <div class="photo" style="background-image:url('images/prep-building.jpg')"><img src="images/prep-logo.png" alt=""></div>
+          <div class="body">
+            <h3>Desert Ridge Preparatory</h3>
+            <dl class="facts">
+              <dt>Grades</dt><dd>K–8</dd>
+              <dt>Where</dt><dd>304 4th Street</dd>
+              <dt>Hours</dt><dd>7:30 am – 2:00 pm, Monday–Thursday (July–May)</dd>
+            </dl>
+            <span class="tag">Home of the Miners</span>
+            <p>We mine for knowledge. Kingman's gold, turquoise, and limestone heritage turned into science, engineering, and real projects that predict the future, solve problems, and create solutions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="philosophy" class="philo" aria-labelledby="philo-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Preparatory &amp; Stepping Stones</span>
+        <h2 id="philo-title">Our Philosophy</h2>
+        <p>From preschool to graduation, every student, from any circumstance, can find their learning style and strengths.</p>
+      </div>
+      <div class="philo-grid">
+        <div class="mvv">
+          <article>
+            <span class="eyebrow">Mission</span>
+            <p>Desert Ridge educates, enlightens, and empowers all students to achieve their full potential as part of an investigative, innovative, and inclusive-centered community.</p>
+          </article>
+          <article>
+            <span class="eyebrow">Vision</span>
+            <p>Desert Ridge students will possess the passion to infuse intellectual inquiry by working with families, fellow students and the community to successfully navigate and create a positive change in the world.</p>
+          </article>
+          <article>
+            <span class="eyebrow">Values</span>
+            <ul class="values">
+              <li>Family Engagement</li><li>Lifelong Learning</li><li>Community Involvement</li><li>Inclusion</li><li>Project-Based Education</li>
+            </ul>
+          </article>
+          <article>
+            <span class="eyebrow">Our keywords</span>
+            <p class="keywords">authentic · inclusion · project based</p>
+          </article>
+        </div>
+        <aside class="max" aria-labelledby="max-title">
+          <img src="images/max-the-miner.jpg" alt="Max the Miner, the Desert Ridge Preparatory mascot, holding a pickaxe">
+          <h3 id="max-title">Max the Miner</h3>
+          <p class="motto">We Mine for Knowledge!</p>
+          <p>Max is our hero. In a town that still mines gold, turquoise, and limestone, we mine for knowledge.</p>
+          <div class="ore" aria-hidden="true"><span class="gold">Gold</span><span class="turquoise">Turquoise</span><span class="lime">Limestone</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Visit us</span>
+        <h2 id="contact-title">Hours &amp; Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="campuses">
+          <div class="campus">
+            <h3>Stepping Stones</h3>
+            <div class="row"><span class="k">Address</span><a href="https://maps.google.com/?q=127+E+Beale+Street+Kingman+AZ+86401" target="_blank" rel="noopener">127 E Beale Street, Kingman AZ 86401</a></div>
+            <div class="row"><span class="k">Hours</span><span>6:30 am – 6:00 pm, Sunday–Saturday</span></div>
+            <div class="row"><span class="k">Ages</span><span>2–5</span></div>
+          </div>
+          <div class="campus">
+            <h3>Preparatory</h3>
+            <div class="row"><span class="k">Address</span><a href="https://maps.google.com/?q=304+4th+Street+Kingman+AZ+86401" target="_blank" rel="noopener">304 4th Street, Kingman AZ 86401</a></div>
+            <div class="row"><span class="k">Hours</span><span>7:30 am – 2:00 pm, Monday–Thursday (July–May)</span></div>
+            <div class="row"><span class="k">Grades</span><span>K–8</span></div>
+          </div>
+          <div class="phone-big">
+            <small>Call or text, both campuses</small>
+            <a class="num" href="tel:+19282797181">928-279-7181</a>
+          </div>
+        </div>
+
+        <form class="tour" id="tour" novalidate>
+          <h3>Schedule a Tour</h3>
+          <p>Tell us a little about your child and we'll reach out to set a time.</p>
+          <div class="two">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Jane Smith"></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="928-555-0123"></div>
+          </div>
+          <div class="field"><label for="f-age">Child's age or grade</label><input id="f-age" name="child_age_grade" required placeholder="e.g. 3 years old, or 2nd grade"></div>
+          <fieldset>
+            <legend>Preferred campus</legend>
+            <div class="choices">
+              <div class="choice"><input type="radio" name="campus" id="c-ss" value="Stepping Stones" required><label for="c-ss">Stepping Stones<small>Ages 2–5 · Beale St</small></label></div>
+              <div class="choice"><input type="radio" name="campus" id="c-prep" value="Preparatory"><label for="c-prep">Preparatory<small>Grades K–8 · 4th St</small></label></div>
+            </div>
+          </fieldset>
+          <button class="btn btn-primary" type="submit" id="f-submit">Request a Tour</button>
+          <p class="form-note" id="f-note" hidden role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="seals"><img src="images/stepping-stones-logo.png" alt=""><img src="images/prep-logo.png" alt=""></div>
+    <div>
+      <p><strong>Desert Ridge Stepping Stones &amp; Preparatory</strong> · Kingman, Arizona</p>
+      <p class="tagline">Small classes. Project-based. Inclusive.</p>
+    </div>
+    <p><a href="tel:+19282797181">928-279-7181</a></p>
+  </div>
+</footer>
+
+<script>
+/* Paste your GoHighLevel inbound-webhook URL (or any form endpoint) here.
+   Leave empty and the form tells parents to call instead of pretending it sent. */
+const FORM_ENDPOINT = "";
+
+const form = document.getElementById("tour");
+const note = document.getElementById("f-note");
+const btn = document.getElementById("f-submit");
+function show(msg, err){ note.textContent = msg; note.classList.toggle("err", !!err); note.hidden = false; }
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  if (!d.name || !d.phone || !d.child_age_grade || !d.campus) {
+    show("Please fill in your name, phone, your child's age or grade, and pick a campus.", true); return;
+  }
+  if (!FORM_ENDPOINT) {
+    show("Thanks, " + d.name.split(" ")[0] + ". Online tour requests aren't switched on yet, so please call or text 928-279-7181 and we'll book your visit.");
+    return;
+  }
+  btn.disabled = true; btn.textContent = "Sending…";
+  try {
+    const r = await fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ ...d, source:"Website tour form" }) });
+    if (!r.ok) throw new Error(r.status);
+    form.reset();
+    show("Request received. We'll call you at " + d.phone + " to set a tour time.");
+  } catch (_) {
+    show("That didn't go through. Please call or text 928-279-7181 to book your tour.", true);
+  } finally { btn.disabled = false; btn.textContent = "Request a Tour"; }
+});
+</script>
+
+</body>
+</html>
